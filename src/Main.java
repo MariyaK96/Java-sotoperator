@@ -1,18 +1,30 @@
 public class Main {
     public static void main(String[] args) {
 
-        int eaters = 5; // сколько людей будут есть
+        // Объявляете переменные для входных данных и
+        // параметров программы: начального счёта,
+        // суммы пополнения и тп
+        int balance = 100;
+        int replenishment = 1_200;
+        int min = 1_000;
+        boolean replenishes = true;
 
-        int water = 3000; // миллилитров воды
-        int potatoes = 5; // картофелин
-        int chicken = 6; // куриных бёдер
-        int spices = 10; // ложек специй
+        // Условным оператором проверяете превысила ли
+        // сумма пополнения порог и для этих двух разных
+        // сценариев рассчитываете сумму бонуса и выводите
+        // на экран.
+        int sum = balance + replenishment;
+        int bonus = replenishment / 100;
+        int percent = replenishes ? bonus : sum;
+        int check = percent + sum;
+        if (sum > min) {
 
-        System.out.println("Сварили суп. На одного человека вышло:");
-        System.out.println((water / eaters) + " миллилитров воды");
-        System.out.println((potatoes / eaters) + " картофелин(а)");
-        System.out.println((chicken / eaters) + " куриных(ое) бёдер(ро)");
-        System.out.println((spices / eaters) + " ложек(ка) специй");
+        } else {
+            check = sum;
+        }
 
+        System.out.println(check);
     }
 }
+
+
